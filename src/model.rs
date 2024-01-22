@@ -14,17 +14,17 @@ impl AppState {
     }
 }
 
-pub trait ResourceAccess {
+pub trait CounterResourceAccess {
     fn get_counter(&self) -> usize;
-    fn increment_counter(&self);
+    fn increment_counter(&self) -> usize;
 }
 
-impl ResourceAccess for AppState {
+impl CounterResourceAccess for AppState {
     fn get_counter(&self) -> usize {
         self.counter.load(Ordering::Relaxed)
     }
 
-    fn increment_counter(&self) {
-        self.counter.fetch_add(1, Ordering::Relaxed);
+    fn increment_counter(&self) -> usize {
+        self.counter.fetch_add(1, Ordering::Relaxed)
     }
 }

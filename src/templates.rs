@@ -5,3 +5,7 @@ use askama::Template;
 pub struct CounterTemplate {
     pub counter: usize,
 }
+
+#[derive(Template)]
+#[template(path = "index.html")]
+pub struct IndexTemplate {}
