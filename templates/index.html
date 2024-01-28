@@ -1,16 +1,22 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
     <head>
-        <meta charset="UTF-8">
-        <title> Counter example </title>
+        <meta charset="UTF-8" />
+        <title>Counter example</title>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
+            rel="stylesheet"
+        />
+        <link href="/css/common.css" rel="stylesheet" />
+        <link href="/css/theme-material.css" rel="stylesheet" />
+        <script src="https://unpkg.com/htmx.org@1.9.10"></script>
     </head>
     <body>
-        
-        <h1> Server-Side Rendering </h1>
-        <div id="counter"
-            hx-get="/counter" 
-            hx-trigger="every 1s"></div>
-
-        <script src="https://unpkg.com/htmx.org@1.9.10"></script>
+        <h1>Server-Side Rendering</h1>
+        <div hx-get="/counter" hx-trigger="load"></div>
     </body>
 </html>

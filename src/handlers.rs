@@ -1,17 +1,14 @@
 use askama::Template;
 
 use axum::{
-    extract::State, 
+    extract::State,
     http::StatusCode,
     response::{Html, IntoResponse},
 };
 
 use std::sync::Arc;
 
-use crate::{
-    model::{AppState, CounterResourceAccess}, 
-    templates::{CounterTemplate, IndexTemplate},
-};
+use crate::{app_state::*, templates::*};
 
 pub async fn counter_handler(State(app_state): State<Arc<AppState>>) -> impl IntoResponse {
     let counter = app_state.increment_counter();

@@ -1,3 +1,7 @@
-<p>
-    Counter: <strong>{{ counter }}</strong>
-</p>
+<div id="counter">
+    <button hx-get="/counter" hx-swap="outerHTML" hx-target="#counter">
+        <i class="material-icons-outlined"> person_add </i>
+        <p>Increase</p>
+    </button>
+    <input type="text" name="counter" value="{{ counter }}" />
+</div>
